@@ -1,6 +1,7 @@
 package EverythingElse;
 
 public class CombatManager{
+    //KristoffFinley
     public static void main(String[] args) {
         LLEntity list = new LLEntity();
         Entity person = MakeEntity(90, 5, "Juniper");
