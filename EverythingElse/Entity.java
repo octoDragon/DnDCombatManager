@@ -7,7 +7,7 @@ public class Entity {
     //information
     //required
     int hp;
-    int initiation;
+    int initiative;
     String name;
     //misc.
     String statusEffect;
@@ -15,7 +15,13 @@ public class Entity {
 
     public Entity(int hp, int initiation, String name) {
         this.hp = hp;
-        this.initiation = initiation;
+        this.initiative = initiation;
+        this.name = name;
+        next = null;
+    }
+
+    public Entity(int initiation, String name) {
+        this.initiative = initiation;
         this.name = name;
         next = null;
     }
@@ -23,7 +29,7 @@ public class Entity {
     //print formatting
     public String toString() {
         return "Name: " + name +
-                " HP: " + hp
-                + " Initiation: " + initiation;
-    }
+                " HP: " + hp +
+                " Initiation: " + initiative;
+        }
 }

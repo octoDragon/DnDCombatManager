@@ -26,6 +26,7 @@ public class LLEntity {
      public void printList(LLEntity list) {
          Entity last = list.head;
          while (last.next != null) { //walks the SLL and prints each Entity
+
             System.out.println(last);
              last = last.next;
          }
@@ -48,4 +49,73 @@ public class LLEntity {
      }
  
      //rearange linked list to match initiative
+     public void DetermineInitiative(LLEntity list)
+     {
+         //using MergeSort()
+         //how to sort a link list, then run format
+         //printlist(list);
+     }
+
+
+     //template used from Geeks for Geeks Merge Sort LL website
+     private Entity sortedMerge(Entity a, Entity b)
+     {
+        Entity result = null;
+        //Base cases > when no recursion takes place
+        if (a == null){return b;}
+        if (b == null){return a;}
+
+        //Pick either a or b, and recur 
+        if (a.initiative <= b.initiative) {
+            result = a;
+            result.next = sortedMerge(a.next,b);
+        }
+        else {
+            result = b;
+            result.next = sortedMerge(a, b.next);
+        }
+
+        return result;
+
+     }
+
+     public Entity MergeSort(Entity h)
+     {
+        // Base case : if head is null 
+        if ( h == null || h.next == null) { 
+            return h; 
+        } 
+  
+        // get the middle of the list 
+        Entity middle = getMiddle(h); 
+        Entity nextofmiddle = middle.next; 
+  
+        // set the next of middle node to null 
+        middle.next = null; 
+  
+        // Apply mergeSort on left list 
+        Entity left = MergeSort(h); 
+  
+        // Apply mergeSort on right list 
+        Entity right = MergeSort(nextofmiddle); 
+  
+        // Merge the left and right lists 
+        Entity sortedlist = sortedMerge(left, right); 
+        return sortedlist; 
+    } 
+  
+    // Utility function to get the middle of the linked list 
+    public static Entity getMiddle(Entity head) 
+    { 
+        if (head == null)
+            return head; 
+  
+        Entity slow = head, fast = head; 
+  
+        while (fast.next != null && fast.next.next != null) { 
+            slow = slow.next; //advance by one 
+            fast = fast.next.next; //advance by two
+        } 
+        return slow; 
+    } 
 }
