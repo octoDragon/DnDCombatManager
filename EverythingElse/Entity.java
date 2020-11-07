@@ -10,7 +10,7 @@ public class Entity {
     int initiative;
     String name;
     //misc.
-    String statusEffect;
+    String condition;
     String actions;
 
     public Entity(int hp, int initiation, String name) {
@@ -27,9 +27,19 @@ public class Entity {
     }
 
     //print formatting
+    // System.out.printf("%s %15s %8s %16s%n \n", "Name", "Initiative", "HP", "Conditions");
     public String toString() {
-        return "Name: " + name +
-                " HP: " + hp +
-                " Initiation: " + initiative;
+
+        if (hp > 0)
+        {
+            return String.format("%-9.7s %-15s %-8s %-16s", name, initiative, hp, condition);
+            // return name + " HP: " + hp +
+            //        " Initiation: " + initiative;
         }
+
+        else 
+        {
+            return String.format("%-9s %-15s %-8s %-16s", name, initiative, "X", condition);
+        }
+    }
 }

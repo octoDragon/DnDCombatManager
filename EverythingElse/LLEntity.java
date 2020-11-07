@@ -25,13 +25,15 @@ public class LLEntity {
  
      public void printList(LLEntity list) {
          Entity last = list.head;
+         System.out.println("-----------------------------------------------");
+         System.out.printf("%s %15s %7s %16s%n \n", "Name", "Initiative", "HP", "Conditions");
          while (last.next != null) { //walks the SLL and prints each Entity
 
             System.out.println(last);
              last = last.next;
          }
          System.out.println(last); //prints last link
-         System.out.println("----------------------------");
+         System.out.println("-----------------------------------------------");
      }
  
      public void SubtractHP(LLEntity list, String name, int amount) {
