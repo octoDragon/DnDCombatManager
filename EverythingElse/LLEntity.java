@@ -4,7 +4,7 @@ public class LLEntity {
      //LL parameter
      Entity head = null;
      Entity currentNode = null;
- 
+
      public LLEntity insert(LLEntity list, Entity newNode) {
          //when LL is empty
          if (head == null) {

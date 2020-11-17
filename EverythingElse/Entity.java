@@ -26,6 +26,9 @@ public class Entity {
         next = null;
     }
 
+    public Entity()
+    {}
+
     //print formatting
     // System.out.printf("%s %15s %8s %16s%n \n", "Name", "Initiative", "HP", "Conditions");
     public String toString() {
