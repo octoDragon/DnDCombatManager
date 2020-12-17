@@ -1,5 +1,3 @@
-package EverythingElse;
-
 public class Entity {
     //node-related
     Entity next;
@@ -26,22 +24,17 @@ public class Entity {
         next = null;
     }
 
-    public Entity()
-    {}
+    public Entity() {
+    }
 
     //print formatting
     // System.out.printf("%s %15s %8s %16s%n \n", "Name", "Initiative", "HP", "Conditions");
     public String toString() {
-
-        if (hp > 0)
-        {
+        if (hp > 0) {
             return String.format("%-9.7s %-15s %-8s %-16s", name, initiative, hp, condition);
             // return name + " HP: " + hp +
             //        " Initiation: " + initiative;
-        }
-
-        else 
-        {
+        } else {
             return String.format("%-9s %-15s %-8s %-16s", name, initiative, "X", condition);
         }
     }

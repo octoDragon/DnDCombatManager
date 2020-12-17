@@ -1,0 +1,5 @@
+c Name Initiative HP
+EPICMONSTER 19 8 Fat
+Homer 10 6 X
+ddlfjka 90 X X
+Yeti 5 5 Tired

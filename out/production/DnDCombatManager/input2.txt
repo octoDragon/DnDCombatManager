@@ -1,0 +1,4 @@
+c Name Initiative HP
+Yeti 5
+Homer 10
+EPICMONSTER 19
